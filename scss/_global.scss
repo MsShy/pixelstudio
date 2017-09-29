@@ -1,0 +1,146 @@
+h2 {
+  font-size: 45px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 21px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+.layout {
+  @include make-row;
+}
+
+/*header*/
+.header {
+
+  @extend .navbar;
+  @extend .navbar-fixed-top;
+
+  &__main-nav {
+    @extend .navbar-nav;
+    @extend .nav;
+    @extend .navbar-right;
+
+  }
+  .main-nav__items {
+    @include clearfix;
+  }
+}
+
+/*home page*/
+.home-page {
+
+  .article {
+    @include make-xs-column(6);
+    display: inline-block;
+  }
+  .slider {
+    @include make-xs-column(6);
+    display: inline-block;
+  }
+  .posts {
+
+    @for $i from 1 through 3 {
+      &__info#{$i} {
+        @include make-xs-column(4);
+        display: inline-block;
+      }
+    }
+
+  }
+
+}
+
+/*portfolio page*/
+.portfolio-page {
+
+  @for $i from 1 through 9 {
+    &__img#{$i} {
+      @include make-xs-column(4);
+    }
+  }
+}
+
+.gallery {
+  @for $i from 1 through 12 {
+    &__item#{$i} {
+      @include make-xs-column(3, 20px);
+    }
+  }
+}
+
+/*contact page*/
+
+.contact-page {
+  .contact {
+    @include make-xs-column(8);
+    .form {
+      &__labels {
+        @include make-xs-column(2);
+      }
+      &__inputs {
+        @include make-xs-column(10);
+      }
+    }
+  }
+  .contact-informs--right {
+    @include make-xs-column(4);
+  }
+}
+
+/*footer */
+.footer {
+  .footer-social {
+    @include make-xs-column(4);
+  }
+  .footer-block {
+    @include make-xs-column(8, 0);
+
+    &--left {
+      @include make-xs-column(6, 20px);
+      width: 47%;
+    }
+    &--right {
+      @include make-xs-column(4, 20px);
+      @include make-xs-column-pull(2);
+      @include make-xs-column-offset(2);
+    }
+  }
+}
+
+/*about-me-page*/
+.about-me-page {
+  &__content {
+    @include make-xs-column(8);
+  }
+  &__aside {
+    @include make-xs-column(4);
+  }
+  .aside {
+    @for $i from 1 through 8 {
+      &__flickr-item#{$i} {
+        @include make-xs-column(4);
+      }
+    }
+  }
+}
+
+/*elements-page*/
+.elements-page {
+  &__article {
+    @include make-xs-column(8);
+  }
+  &__aside {
+    @include make-xs-column(4);
+  }
+}
+
+

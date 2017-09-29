@@ -1,0 +1,7 @@
+@mixin border-top($height, $style, $color) {
+  border-top: $height $style $color;
+}
+
+@mixin border-quote-left-color($color) {
+  border-left: 7px solid $color;
+}
